@@ -1,12 +1,14 @@
 <div class="flexbox">
   <div class="flexitem">
-    <%= image_tag =  %>
+    <img class="avatar-card" src="https://upload.wikimedia.org/wikipedia/en/e/e5/D%26d2.jpg" alt="image of dungeon and dragon">
+    <!-- placeholder until we find an image generator or something -->
   </div>
   <div class="flexitem">
     <h3><%= @character.name %></h3>
   </div>
   <div class="flexitem">
     <p><%= @character.dnd_class %> - <%= @character.dnd_subclass %> - <%= @character.role %></p>
+    <!-- TODO : split the array of dnd_class & dnd_subclass -->
   </div>
   <div class="flexitem">
     <button class="btn-recruit">Recruit</button>
