@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'character/index'
+  get 'character/show'
+  get 'character/new'
+  get 'character/create'
+  get 'character/edit'
+  get 'character/update'
+  get 'character/delete'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
