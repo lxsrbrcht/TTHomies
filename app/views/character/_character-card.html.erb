@@ -1,0 +1,15 @@
+<div class="flexbox">
+  <div class="flexitem">
+    <%= image_tag =  %>
+  </div>
+  <div class="flexitem">
+    <h3><%= @character.name %></h3>
+  </div>
+  <div class="flexitem">
+    <p><%= @character.dnd_class %> - <%= @character.dnd_subclass %> - <%= @character.role %></p>
+  </div>
+  <div class="flexitem">
+    <button class="btn-recruit">Recruit</button>
+    <!-- TODO : Javascript to invite the character to a campaign -->
+  </div>
+</div>
