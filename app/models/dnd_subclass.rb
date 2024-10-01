@@ -3,8 +3,10 @@ class DndSubclass < ApplicationRecord
 
   if character.game.system == "D&D 5"
     case character.dnd_class.class_name
+    when "Artificier"
+      DND5SUBCLASSES = ["Archétype de l'Alchimiste", "Archétype de l'Artilleriste", "Archétype de l'Ingénieur de Guerre"]
     when "Barbare"
-      DND5SUBCLASSES = ["Sentinelle Ancestrale", "Furie", "Sentinelle Totémique", "Sentinelle Berserk"]
+      DND5SUBCLASSES = ["Sentinelle Ancestrale", "Furie", "Sentinelle Totémique"]
     when "Barde"
       DND5SUBCLASSES = ["Collège de la Chanson", "Collège de la Valeur"]
     when "Clerc"
