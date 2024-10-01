@@ -1,4 +1,22 @@
 <h1>Create a character</h1>
-<%= simple_form_for @character do |f|
 
-%>
+<%= simple_form_for [@user, @character] do |f| %>
+  <%= f.label :game, "First, choose a game" %><br />
+  <%= f.select :game, Game::SYSTEMS %> <!-- this is a dropdown -->
+  <%= f.input :name,
+              required: true,
+              input_html: { autocomplete: "Name of your character" } %>
+  <%= f.label :dnd_class, "Choose a class" %><br />
+  <%= f.select :dnd_class, Dnd_class::DNDCLASSES %> <!-- this is a dropdown -->
+  <!-- TODO : Dependending on the game, the dndclasses dropdown has to change -->
+  <%= f.label :dnd_subclass, "Choose a subclass" %><br />
+  <%= f.select :dnd_subclass, Dnd_subclass::DND5SUBCLASSES %> <!-- this is a dropdown -->
+  <!-- TODO : Dependending on the dndclasses, the dndsubclasses dropdown has to change -->
+  <%= f.input :role %>
+  <!-- TODO : Is there any role ? Not in the model or migration yet -->
+  <%= f.label :character, "Race of your character" %><br />
+  <%= f.select :character, Character::RACES %> <!-- this is a dropdown -->
+  <%= f.input :bio,
+              required: true,
+              input_html: { autocomplete: "Write a little story to your character"} %>
+<% end %>
