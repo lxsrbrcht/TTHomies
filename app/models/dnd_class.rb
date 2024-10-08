@@ -1,10 +1,9 @@
 class DndClass < ApplicationRecord
-  belongs_to :character
+  has_one :game
+  has_many :characterclasses
+  has_many :characters, through: :characterclasses
+  has_many :dnd_subclasses
 
-
-  DNDCLASSES = ["Artificier", "Barbare", "Barde", "Clerc", "Druide", "Ensorceleur", "Guerrier", "Magicien", "Moine", "Paladin", "Rôdeur", "Roublard", "Occultiste"]
-
-  validates :class_name, inclusion: { in: DNDCLASSES }
+  validates :class_name, presence: true
   validates :description, presence: true
-
 end
