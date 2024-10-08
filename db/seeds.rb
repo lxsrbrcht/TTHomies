@@ -7,9 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Game.destroy_all
 DndClass.destroy_all
 DndSubclass.destroy_all
-Game.destroy_all
 
 puts "creating games"
 Game.create!(system: "D&D 5")
@@ -98,3 +98,6 @@ DndSubclass.create!(subclass_name: "Voleur", description: "Les roublards de l'ar
 DndSubclass.create!(subclass_name: "Archifée", description: "Les occultistes de l'archifée sont des sorciers et des magiciens, utilisant leur savoir pour invoquer des entités surnaturelles et des démons.", dnd_class_id: 13)
 DndSubclass.create!(subclass_name: "Le Fiélon", description: "Les occultistes du fiélon sont des sorciers et des magiciens, utilisant leur savoir pour invoquer des entités surnaturelles et des démons.", dnd_class_id: 13)
 DndSubclass.create!(subclass_name: "Le Grand Ancien", description: "Les occultistes du grand ancien sont des sorciers et des magiciens, utilisant leur savoir pour invoquer des entités surnaturelles et des démons.", dnd_class_id: 13)
+
+puts "creating users"
+User.create!(email: "bill@email.com", password: "password")
