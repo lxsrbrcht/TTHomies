@@ -1,6 +1,8 @@
 class Character < ApplicationRecord
   belongs_to :user
-  belongs_to :game
+  has_one :game
+  has_many :characterclasses
+  has_many :dnd_classes, through: :characterclasses
 
   RACES = %w[human elf dwarf halfling gnome half-elf half-orc tiefling aasimar dragonborn goliath]
 

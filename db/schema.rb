@@ -70,9 +70,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_01_124620) do
     t.bigint "dnd_class_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "game_id"
     t.index ["dnd_class_id"], name: "index_dnd_subclasses_on_dnd_class_id"
-    t.index ["game_id"], name: "index_dnd_subclasses_on_game_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -103,5 +101,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_01_124620) do
   add_foreign_key "characters", "users"
   add_foreign_key "dnd_classes", "games"
   add_foreign_key "dnd_subclasses", "dnd_classes"
-  add_foreign_key "dnd_subclasses", "games"
 end
